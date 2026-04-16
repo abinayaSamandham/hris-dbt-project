@@ -22,7 +22,9 @@ final_join as (
         e.employee_status,
         e.hire_date,
         d.department_name,
-        s.annual_salary,
+        s.annual_salary as salary_local,
+        -- Using our macro here
+        {{ convert_to_usd('s.annual_salary', 0.8) }} as salary_usd,
         t.tenure_months
     from employees e
     left join departments d 
