@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: hr_system
+    database: hris_db
+    schema: raw
+    tables:
+    - name: employees
+    - name: departments
+    - name: salaries

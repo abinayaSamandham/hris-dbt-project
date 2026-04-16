@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_employees
+    description: "Final dimension table for employees, combining department and salary data."
+    columns:
+      - name: employee_id
+        tests:
+          - unique
+          - not_null
+      - name: tenant_id
+        tests:
+          - not_null
+      - name: employee_status
+        tests:
+          - accepted_values:
+              values: ['active', 'terminated']
